@@ -1,0 +1,323 @@
+<doctype html> <html>
+
+<head>
+		<title> davi geikkkk </title>
+
+<style>
+	
+*{
+	margin: 0 auto;
+}
+
+body{
+	margin: auto;
+	place-items: center;
+	align-items: center;
+	
+	.backimage{
+		z-index:-1;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-image: none;
+		background-repeat: no-repeat;
+		background-size: 100% 100% ;
+		opacity: 0.4;
+	}
+}
+
+
+
+.texto{
+	font-family: arial black;
+	font-size: 20px;
+	padding: 15px;
+	text-align: center;
+	color: rgb(0, 0, 0);
+	display: block;
+	
+}
+
+video,img{
+	display: block;
+	width: 40%;
+	background-color: black;
+}
+video{
+	height: 22.9rem;
+}
+
+.progresso{
+	width: 90%;
+	background-color: rgb(138, 255, 255);
+	border-radius: 15px;
+}
+.barra{
+	margin: 0;
+	width: 50%;
+	height: 30px;
+	background-color: rgb(37, 37, 37);
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+
+
+@keyframes vira {
+	from {
+		padding: 30px;
+	}
+	to {
+		padding: 35px;
+	}
+}
+.deus:hover {
+	padding: 35px;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: purple;
+}
+
+.deus:active {
+	background-color: rgb(218, 215, 48);
+	transition: background-color ease-in 30ms;
+}
+
+.deus {
+	width: 50%;
+	border-radius: 35px;
+	font-family: arial black;
+	user-select: none;
+	font-size: 15px;
+	padding: 30px;
+	text-align: center;
+	background-color: black;
+	color: rgb(255, 255, 255);
+	transition: padding 500ms, font-size ease-out 100ms,background-color 300ms;
+}
+
+.obs {
+	position: absolute;
+}
+
+.gggod{
+	z-index: 1;
+	font-family: arial black;
+	font-size: 150px;
+	margin: 0 center;
+	text-align: center;
+	color: rgb(255, 255, 255);
+}
+.fimgod{
+	z-index: 1;
+	margin: 0 center;
+	display: none;
+}
+
+</style>
+
+
+
+
+
+</head>
+<body>
+<div class="backimage"></div>
+
+<div class="fimgod">
+	<div class="gggod">gg god</div>
+	<br>
+	<div class="deus" id="sv">Salvar sua alma</div>
+</div>
+
+
+<div class="pag">
+	
+	<div class="texto" id="dedica">
+		Esta página é dedicada exclusivamente para deleite com a imagem de <span style="font-family:'Impact'">Davi Oliveira</span>
+	</div>
+	
+	<img src="davi.jpg">
+	<br>
+	<div class="progresso">
+		<div class="barra"></div>
+	</div>
+	<br>
+	<div class="jvd">
+		<img class="davimaior" src="davis.jpg">
+		<video class="davi" style="display:none;" src="masculinidade.mp4" type="video/mp4"></video>
+		<video class="jesus" style="display:none;" src="deuseditado.mp4" type="video/mp4">
+	</div>
+	<audio class="boom" src="boom.mp3" type="audio/m4a"></audio>
+	
+	
+	
+	
+	<div class="texto" id="bio">
+		
+		o davi é muinto homem e eu me impressiono muitas vezes </font>
+	<br>	ele escreve poemas de amor e trança no pelo
+	ele é, em suma, meu maior ídolo atualmente
+	</div>
+
+	<div class="deus" id="troca">davi>Jesus</div>
+
+	<p class="obs">
+		MINHA OPINIAO
+		<br>
+		nao gosar=respeitar
+	</p>
+
+
+</div>
+
+<script>
+
+var movejesus;
+var movedavi;
+var width = 50;
+var i = 0;
+
+var godvel = 0.01;
+var caravel = 0.01;
+
+	const jesus = document.querySelector("#troca")
+	const bg = document.querySelector(".backimage")
+	const davis = document.querySelector(".davimaior")
+	const dv = document.querySelector(".davi")
+	const je = document.querySelector(".jesus")
+	const boom = document.querySelector(".boom")
+
+	const pag = document.querySelector(".pag")
+
+	var barra = document.querySelector(".barra")
+	var progresso = document.querySelector(".progresso")
+	progresso.style.display="none";
+
+	const gggod = document.querySelector(".gggod")
+	const fimgod = document.querySelector(".fimgod")
+	const sv = document.querySelector("#sv")
+
+	const bio = document.querySelector("#bio")
+	const dedica = document.querySelector("#dedica")
+
+	const davitext = [`Esta página é dedicada exclusivamente para deleite com a imagem de <span style="font-family:'Impact'">Davi Oliveira</span>`,"o davi é muinto homem e eu me impressiono muitas vezes<br> ele escreve poemas de amor e trança no pelo ele é, em suma, meu maior ídolo atualmente"]
+	const jesustext = [`Esta página é dedicada exclusivamente para deleite com a imagem de <span style="font-family:'Impact'">Davi Oliveira</span>; pois nele encontramos inspiração e beleza.`,"O Jesus, homem de muitas virtudes.<br>cuja escrita de amor transcende e cuja habilidade em trançar no pelo é como um sinal de sua sabedoria. Ele é, verdadeiramente, um ídolo em nossos tempos."]
+
+	jesus.addEventListener("click", () => {
+		boom.load()
+		boom.play()
+
+		if(jesus.innerHTML=="JESUS")
+		{
+			jesus.innerHTML="DAVI"
+
+			dedica.innerHTML=davitext[0]
+			bio.innerHTML=davitext[1]
+			bg.style = `background-image: url(musculos.jpeg);`
+
+			
+			dv.style.display="block"
+			je.style.display="none"
+			dv.play()
+			je.pause()
+			moved()
+		}
+		else
+		{
+			i==1
+			jesus.innerHTML="JESUS"
+
+			dedica.innerHTML=jesustext[0]
+			bio.innerHTML=jesustext[1]
+			bg.style = `background-image: url(jota.jpeg);`
+
+			
+			je.style.display="block"
+			dv.style.display="none"
+			je.play()
+			dv.pause()
+			movej()
+
+			if (i==1)return;
+			davis.style.display="none";
+			progresso.style.display="block";
+		}
+
+	
+		
+	})
+
+	
+	function moved() {
+    clearInterval(movejesus);
+    movedavi = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(movedavi);
+        } else {
+            width += caravel;
+			caravel+=0.001
+            barra.style.width = width + "%";
+        }
+	}
+	}
+
+function movej() {
+    clearInterval(movedavi);
+    movejesus = setInterval(frame, 10);
+    function frame() {
+        if (width <= 0) {
+            clearInterval(movejesus);
+			pag.style.display="none"
+			bg.style.opacity="1"
+			boom.load()
+			boom.play()
+			setTimeout(() => {
+				bg.style.backgroundImage="url('jotagg.jpeg')"
+				boom.load()
+				boom.play()
+			},500);
+			setTimeout(() => {
+				bg.style.width="150%"
+				bg.style.height="150%"
+				boom.load()
+				boom.play()
+			},1000);
+			setTimeout(() => {
+				bg.style.width="200%"
+				bg.style.height="200%"
+				boom.load()
+				boom.play()
+			},1200);
+			setTimeout(() => {
+				bg.style.width="300%"
+				bg.style.height="300%"
+				boom.load()
+				boom.play()
+			},1100);
+			setTimeout(() => {
+				bg.style.backgroundImage="none"
+				bg.style.backgroundColor="#500000"
+				fimgod.style.display="block"
+				boom.load()
+				boom.play()
+				sv.addEventListener("click", ()=>{
+					boom.load()
+					boom.play()
+					setTimeout(() => {
+						window.location.reload()
+					}, 400);
+				})
+			},1400);
+        } else {
+            width -= godvel;
+			godvel+=0.001
+            barra.style.width = width + "%";
+        }
+	}
+	}
+</script>
+
+
+</body>

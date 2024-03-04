@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>davi geikkkk</title>
+
+    <style>
+        * {
+            margin: 0 auto;
+        }
+
+        body {
+            margin: auto;
+            place-items: center;
+            align-items: center;
+        }
+
+        .backimage {
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("image.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            opacity: 0.4;
+        }
+
+        .texto {
+            font-family: arial black;
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            display: block;
+        }
+
+        img {
+            display: block;
+            width: 40%;
+            margin: auto;
+        }
+
+        .deus:hover {
+            cursor: pointer;
+            background-color: purple;
+            padding: 35px;
+            font-size: 20px;
+            transition: background-color 100ms ease, padding 500ms ease-out, font-size 100ms ease-out;
+        }
+
+        .deus {
+            width: 50%;
+            border-radius: 35px;
+            font-family: arial black;
+            font-size: 15px;
+            padding: 30px;
+            text-align: center;
+            background-color: black;
+            color: rgb(255, 255, 255);
+        }
+
+        .obs {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="backimage"></div>
+
+    <div class="texto">
+        Esta página é dedicada exclusivamente para deleite com a imagem de <span style="font-family:'Impact'">Davi Oliveira</span>
+    </div>
+
+    <img src="davi.jpg">
+    <br>
+    <img src="davis.jpg">
+
+    <div class="texto">
+        O Davi é muito homem e eu me impressiono muitas vezes. Ele escreve poemas de amor e trança no pelo. Ele é, em suma, meu maior ídolo atualmente.
+    </div>
+
+    <div class="deus">davi &gt; Jesus</div>
+
+    <p class="obs">
+        MINHA OPINIÃO
+        <br> Não gostar = respeitar
+    </p>
+
+    <script>
+        const jesus = document.querySelector(".deus");
+
+        jesus.addEventListener("click", () => {
+            jesus.innerHTML == "AAAAAAAAAAAAAAA" ?
+                jesus.innerHTML = "a nem nem nem nem" :
+                jesus.innerHTML = "AAAAAAAAAAAAAAA";
+        });
+    </script>
+</body>
+
+</html>
